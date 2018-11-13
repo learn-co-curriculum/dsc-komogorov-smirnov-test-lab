@@ -258,7 +258,7 @@ print(stats.kstest(x_uni, 'norm', args=(0, 3)))
 # degree of confidence 
 ```
 
-## 2 - sample KS test
+## 2 sample KS test
 A two sample KS test is available in SciPy using following function
 ```python 
 scipy.stats.ks_2samp(data1, data2)[source]
