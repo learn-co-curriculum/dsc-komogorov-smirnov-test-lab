@@ -8,8 +8,8 @@ In the previous lesson, we saw that the Kolmogorov–Smirnov statistic quantifie
 
 You will be able to:
 * Perform 1 sample and 2 sample KS tests in Python and Scipy
-* Compare KS test to visual approaches for checking normality assumptions
-* Plot CDF and ECDF to visualize parametric and empirical cumulative distribution functions
+* Compare the KS test to visual approaches for checking normality assumptions
+* Plot the CDF and ECDF to visualize parametric and empirical cumulative distribution functions
 
 ## Generate Data
 
@@ -119,7 +119,7 @@ for ind, i in enumerate([x_10,x_50,x_100,x_1000]):
 
 ### Creat a function to plot the normal CDF and ECDF for a given dataset
 - Create a function ks_plot(data) to generate an empirical CDF from data
-- Create a normal CDF using the same mean = 0 and sd = 3 , having same number of values as data
+- Create a normal CDF using the same mean = 0 and sd = 3 , having the same number of values as data
 
 
 ```python
@@ -232,7 +232,7 @@ for i in [x_10,x_50,x_100,x_1000]:
 ```
 
 
-### Generate a uniform distribution and plot / calculate the ks test against a uniform and normal distributions
+### Generate a uniform distribution and plot / calculate the ks test against a uniform as well as a normal distribution
 
 
 ```python
