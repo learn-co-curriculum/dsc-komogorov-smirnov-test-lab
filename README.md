@@ -178,11 +178,6 @@ for ind, i in enumerate([x_10,x_50,x_100,x_1000]):
 
 
 ```python
-
-```
-
-
-```python
 # __SOLUTION__ 
 # Histograms should not be used solely to detect normality directly
 # Histograms are better to look for symmetry, skewness, and outliers 
@@ -190,11 +185,6 @@ for ind, i in enumerate([x_10,x_50,x_100,x_1000]):
 
 # We see some outliers in our datasets
 # no clear indications of non-normality for each plot.
-```
-
-
-```python
-
 ```
 
 
@@ -225,11 +215,11 @@ def ks_plot(data):
 ```
 
 
-![png](index_files/index_15_0.png)
+![png](index_files/index_13_0.png)
 
 
 
-![png](index_files/index_15_1.png)
+![png](index_files/index_13_1.png)
 
 
 
@@ -254,11 +244,11 @@ ks_plot(stats.norm.rvs(loc=5, scale=4, size=100))
 ```
 
 
-![png](index_files/index_16_0.png)
+![png](index_files/index_14_0.png)
 
 
 
-![png](index_files/index_16_1.png)
+![png](index_files/index_14_1.png)
 
 
 This is awesome. The difference between two cdfs in the second plot show that sample did not come from the distribution which we tried to compare it against. 
@@ -271,19 +261,19 @@ This is awesome. The difference between two cdfs in the second plot show that sa
 ```
 
 
-![png](index_files/index_18_0.png)
+![png](index_files/index_16_0.png)
 
 
 
-![png](index_files/index_18_1.png)
+![png](index_files/index_16_1.png)
 
 
 
-![png](index_files/index_18_2.png)
+![png](index_files/index_16_2.png)
 
 
 
-![png](index_files/index_18_3.png)
+![png](index_files/index_16_3.png)
 
 
 
@@ -296,19 +286,19 @@ ks_plot(x_1000)
 ```
 
 
-![png](index_files/index_19_0.png)
+![png](index_files/index_17_0.png)
 
 
 
-![png](index_files/index_19_1.png)
+![png](index_files/index_17_1.png)
 
 
 
-![png](index_files/index_19_2.png)
+![png](index_files/index_17_2.png)
 
 
 
-![png](index_files/index_19_3.png)
+![png](index_files/index_17_3.png)
 
 
 
@@ -468,7 +458,7 @@ plt.hist(x_1000_bi);
 ```
 
 
-![png](index_files/index_35_0.png)
+![png](index_files/index_33_0.png)
 
 
 
@@ -481,7 +471,7 @@ plt.hist(x_1000_bi);
 ```
 
 
-![png](index_files/index_36_0.png)
+![png](index_files/index_34_0.png)
 
 
 ### Plot the CDFs for x_100_bimodal and x_1000 and comment on the output 
@@ -501,7 +491,7 @@ def ks_plot_2sample(data_1, data_2):
 ```
 
 
-![png](index_files/index_38_0.png)
+![png](index_files/index_36_0.png)
 
 
 
@@ -525,7 +515,7 @@ ks_plot_comp(x_100, x_bimodal_100[:,0])
 ```
 
 
-![png](index_files/index_39_0.png)
+![png](index_files/index_37_0.png)
 
 
 
