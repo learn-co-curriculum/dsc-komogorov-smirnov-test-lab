@@ -8,8 +8,8 @@ In the previous lesson, we saw that the Kolmogorov–Smirnov statistic quantifie
 
 You will be able to:
 * Perform 1 sample and 2 sample KS tests in Python and Scipy
-* Compare KS test to visual approaches for checking normality assumptions
-* Plot CDF and ECDF to visualize parametric and empirical cumulative distribution functions
+* Compare the KS test to visual approaches for checking normality assumptions
+* Plot the CDF and ECDF to visualize parametric and empirical cumulative distribution functions
 
 ## Generate Data
 
@@ -94,9 +94,19 @@ x_1000 = stats.norm.rvs(loc=0, scale=3, size=1000)
 # You comments here 
 ```
 
+
+```python
+
+```
+
+
+```python
+
+```
+
 ### Creat a function to plot the normal CDF and ECDF for a given dataset
 - Create a function ks_plot(data) to generate an empirical CDF from data
-- Create a normal CDF using the same mean = 0 and sd = 3 , having same number of values as data
+- Create a normal CDF using the same mean = 0 and sd = 3 , having the same number of values as data
 
 
 ```python
@@ -114,11 +124,11 @@ def ks_plot(data):
 ```
 
 
-![png](index_files/index_8_0.png)
+![png](index_files/index_10_0.png)
 
 
 
-![png](index_files/index_8_1.png)
+![png](index_files/index_10_1.png)
 
 
 This is awesome. The difference between two cdfs in the second plot show that sample did not come from the distribution which we tried to compare it against. 
@@ -131,19 +141,19 @@ This is awesome. The difference between two cdfs in the second plot show that sa
 ```
 
 
-![png](index_files/index_10_0.png)
+![png](index_files/index_12_0.png)
 
 
 
-![png](index_files/index_10_1.png)
+![png](index_files/index_12_1.png)
 
 
 
-![png](index_files/index_10_2.png)
+![png](index_files/index_12_2.png)
 
 
 
-![png](index_files/index_10_3.png)
+![png](index_files/index_12_3.png)
 
 
 
@@ -234,7 +244,7 @@ plt.hist(x_1000_bi);
 ```
 
 
-![png](index_files/index_21_0.png)
+![png](index_files/index_23_0.png)
 
 
 ### Plot the CDFs for x_100_bimodal and x_1000 and comment on the output 
@@ -254,7 +264,7 @@ def ks_plot_2sample(data_1, data_2):
 ```
 
 
-![png](index_files/index_23_0.png)
+![png](index_files/index_25_0.png)
 
 
 
@@ -267,7 +277,7 @@ def ks_plot_2sample(data_1, data_2):
 
 
 ```python
-# You rcode here
+# Your code here
 
 # Ks_2sampResult(statistic=0.575, pvalue=1.2073337530608254e-14)
 ```
