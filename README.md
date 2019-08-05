@@ -42,7 +42,6 @@ x_1000 = stats.norm.rvs(loc=0, scale=3, size=1000)
 # Plot histograms and QQplots for above datasets
 
 # You code here
-
 ```
 
     x_10
@@ -110,7 +109,6 @@ def ks_plot(data):
 # ks_plot(stats.norm.rvs(loc=0, scale=3, size=100)) 
 # ks_plot(stats.norm.rvs(loc=5, scale=4, size=100))
 
-
 ```
 
 
@@ -162,9 +160,9 @@ scipy.stats.kstest(rvs, cdf, args=(), N=20, alternative='two-sided', mode='appro
 Details on arguments being passed in can be viewed at this [link to official doc.](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.kstest.html)
 
 
-### Run KS test for normality assumption using the datasets created earlier and comment on the output
-- Perform test KS test against a normal distribution with mean = 0 and sd = 3
-- If p < .05 we can reject the null, and conclude our sample distribution is not identical to a normal distribution.
+### Run the KS test for normality assumption using the datasets created earlier and comment on the output
+- Perform the KS test against a normal distribution with mean = 0 and sd = 3
+- If p < .05 we can reject the null hypothesis and conclude our sample distribution is not identical to a normal distribution.
 
 
 ```python
@@ -172,20 +170,16 @@ Details on arguments being passed in can be viewed at this [link to official doc
 
 # Your code here 
 
-for i in [x_10,x_50,x_100,x_1000]:
-    print (stats.kstest(i, 'norm', args=(0, 3)))
-
-
 # KstestResult(statistic=0.20726402525186666, pvalue=0.7453592647579976)
 # KstestResult(statistic=0.11401670469341446, pvalue=0.506142501491317)
 # KstestResult(statistic=0.06541325864884379, pvalue=0.7855843705750273)
 # KstestResult(statistic=0.026211483799585156, pvalue=0.4974218016349998)
 ```
 
-    KstestResult(statistic=0.1632179747086434, pvalue=0.9526730195059537)
-    KstestResult(statistic=0.1072471715631031, pvalue=0.590698827561229)
-    KstestResult(statistic=0.08957748590021086, pvalue=0.3787922342822605)
-    KstestResult(statistic=0.02825842101747439, pvalue=0.39744474314954137)
+    KstestResult(statistic=0.22884920041870055, pvalue=0.6095453632881584)
+    KstestResult(statistic=0.08335689746803676, pvalue=0.8779711872766415)
+    KstestResult(statistic=0.04872167118930776, pvalue=0.9715374771836922)
+    KstestResult(statistic=0.023802300312482094, pvalue=0.622632169525155)
 
 
 
@@ -202,13 +196,12 @@ for i in [x_10,x_50,x_100,x_1000]:
 # Try with a uniform distubtion
 x_uni = np.random.rand(1000)
 
-
 # KstestResult(statistic=0.025244449633212818, pvalue=0.5469114859681035)
 # KstestResult(statistic=0.5001459915784039, pvalue=0.0)
 ```
 
-    KstestResult(statistic=0.025244449633212818, pvalue=0.5469114859681035)
-    KstestResult(statistic=0.5001459915784039, pvalue=0.0)
+    KstestResult(statistic=0.027630317130372672, pvalue=0.4265337727390721)
+    KstestResult(statistic=0.5000095093059782, pvalue=0.0)
 
 
 
@@ -237,7 +230,7 @@ plt.hist(x_1000_bi);
 ![png](index_files/index_21_0.png)
 
 
-### Plot the CDFs for x_100_bimodal and x_1000 and comment on the output 
+### Plot the CDFs for x_1000_bimodal and x_1000 and comment on the output 
 
 
 ```python
@@ -250,7 +243,7 @@ def ks_plot_2sample(data_1, data_2):
     pass
 
 # Uncomment below to run
-# ks_plot_comp(x_100, x_bimodal_100[:,0])
+# ks_plot_2sample(x_1000, x_1000_bi[:,0])
 ```
 
 
@@ -263,7 +256,7 @@ def ks_plot_2sample(data_1, data_2):
 
 ```
 
-### Run the two sample KS test on x_100 and x_100_bi and comment on the results
+### Run the two sample KS test on x_1000 and x_1000_bi and comment on the results
 
 
 ```python
