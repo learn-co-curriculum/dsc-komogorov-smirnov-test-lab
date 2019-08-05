@@ -170,16 +170,16 @@ Details on arguments being passed in can be viewed at this [link to official doc
 
 # Your code here 
 
-# KstestResult(statistic=0.20726402525186666, pvalue=0.7453592647579976)
-# KstestResult(statistic=0.11401670469341446, pvalue=0.506142501491317)
-# KstestResult(statistic=0.06541325864884379, pvalue=0.7855843705750273)
-# KstestResult(statistic=0.026211483799585156, pvalue=0.4974218016349998)
+# KstestResult(statistic=0.1377823669421559, pvalue=0.9913389045954595)
+# KstestResult(statistic=0.13970573965633104, pvalue=0.2587483380087914)
+# KstestResult(statistic=0.0901015276393986, pvalue=0.37158535281797134)
+# KstestResult(statistic=0.030748345486274697, pvalue=0.29574612286614443)
 ```
 
-    KstestResult(statistic=0.22884920041870055, pvalue=0.6095453632881584)
-    KstestResult(statistic=0.08335689746803676, pvalue=0.8779711872766415)
-    KstestResult(statistic=0.04872167118930776, pvalue=0.9715374771836922)
-    KstestResult(statistic=0.023802300312482094, pvalue=0.622632169525155)
+    KstestResult(statistic=0.1377823669421559, pvalue=0.9913389045954595)
+    KstestResult(statistic=0.13970573965633104, pvalue=0.2587483380087914)
+    KstestResult(statistic=0.0901015276393986, pvalue=0.37158535281797134)
+    KstestResult(statistic=0.030748345486274697, pvalue=0.29574612286614443)
 
 
 
@@ -193,15 +193,15 @@ Details on arguments being passed in can be viewed at this [link to official doc
 
 
 ```python
-# Try with a uniform distubtion
+# Try with a uniform distribution
 x_uni = np.random.rand(1000)
 
-# KstestResult(statistic=0.025244449633212818, pvalue=0.5469114859681035)
-# KstestResult(statistic=0.5001459915784039, pvalue=0.0)
+# KstestResult(statistic=0.023778383763166322, pvalue=0.6239045200710681)
+# KstestResult(statistic=0.5000553288071681, pvalue=0.0)
 ```
 
-    KstestResult(statistic=0.027630317130372672, pvalue=0.4265337727390721)
-    KstestResult(statistic=0.5000095093059782, pvalue=0.0)
+    KstestResult(statistic=0.023778383763166322, pvalue=0.6239045200710681)
+    KstestResult(statistic=0.5000553288071681, pvalue=0.0)
 
 
 
@@ -244,6 +244,7 @@ def ks_plot_2sample(data_1, data_2):
 
 # Uncomment below to run
 # ks_plot_2sample(x_1000, x_1000_bi[:,0])
+
 ```
 
 
@@ -262,7 +263,7 @@ def ks_plot_2sample(data_1, data_2):
 ```python
 # Your code here
 
-# Ks_2sampResult(statistic=0.575, pvalue=1.2073337530608254e-14)
+# Ks_2sampResult(statistic=0.633, pvalue=4.814801487740621e-118)
 ```
 
 
