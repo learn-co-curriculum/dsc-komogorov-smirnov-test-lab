@@ -182,8 +182,8 @@ ks_plot(x_1000)
 # Your comments here 
 
 # As we have more data values to compare, we get a better idea of normality
-# Due to randomness in smaller sample size, it is very likely that value of d would be high
-# As our sample size goes from 50 to a 1000, we are in much better position to comment on normality
+# Due to randomness in smaller sample sizes, it is very likely that the value of d would be high
+# As our sample size goes from 50 to a 1000, we are in a much better position to comment on normality
 ```
 
 ### KS test in SciPy
@@ -196,9 +196,9 @@ scipy.stats.kstest(rvs, cdf, args=(), N=20, alternative='two-sided', mode='appro
 Details on arguments being passed in can be viewed at this [link to official doc.](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.kstest.html)
 
 
-### Run KS test for normality assumption using the datasets created earlier and comment on the output
-- Perform test KS test against a normal distribution with mean = 0 and sd = 3
-- If p < .05 we can reject the null, and conclude our sample distribution is not identical to a normal distribution.
+### Run the KS test for normality assumption using the datasets created earlier and comment on the output
+- Perform the KS test against a normal distribution with mean = 0 and sd = 3
+- If p < .05 we can reject the null hypothesis and conclude our sample distribution is not identical to a normal distribution.
 
 
 ```python
@@ -216,18 +216,18 @@ for i in [x_10,x_50,x_100,x_1000]:
 # KstestResult(statistic=0.026211483799585156, pvalue=0.4974218016349998)
 ```
 
-    KstestResult(statistic=0.1632179747086434, pvalue=0.9526730195059537)
-    KstestResult(statistic=0.1072471715631031, pvalue=0.590698827561229)
-    KstestResult(statistic=0.08957748590021086, pvalue=0.3787922342822605)
-    KstestResult(statistic=0.02825842101747439, pvalue=0.39744474314954137)
+    KstestResult(statistic=0.22884920041870055, pvalue=0.6095453632881584)
+    KstestResult(statistic=0.08335689746803676, pvalue=0.8779711872766415)
+    KstestResult(statistic=0.04872167118930776, pvalue=0.9715374771836922)
+    KstestResult(statistic=0.023802300312482094, pvalue=0.622632169525155)
 
 
 
 ```python
 # Your comments here 
 
-# P-value in all cases is much greater than .05 
-# We can not hence reject the Null Hypothesis i.e. our sample is IDENTICAL to a normal distribution
+# The P-value in all cases is much greater than .05 
+# We cannot reject the Null Hypothesis i.e. our sample is IDENTICAL to a normal distribution
 # This is very intuitive as we started off with normal distributions
 ```
 
@@ -245,17 +245,18 @@ print(stats.kstest(x_uni, 'norm', args=(0, 3)))
 # KstestResult(statistic=0.5001459915784039, pvalue=0.0)
 ```
 
-    KstestResult(statistic=0.025244449633212818, pvalue=0.5469114859681035)
-    KstestResult(statistic=0.5001459915784039, pvalue=0.0)
+    KstestResult(statistic=0.029416131814438695, pvalue=0.3474855120914946)
+    KstestResult(statistic=0.5001853961733691, pvalue=0.0)
 
 
 
 ```python
 # Your comments here 
 
-# In the first case we can reject Null Hypothesis and conclude that our sample is a uniform distribution
-# In second case, comparing uniform dist. against a normal CDF, we get p value - 0 , accpeting Null with a high
-# degree of confidence 
+# In the first case, the p-value is much larger than 0.05 so we cannot reject the Null Hypothesis 
+# and conclude that our sample is a uniform distribution
+# In the second case, comparing a uniform distribution against a normal CDF, the p value - 0 
+# so we reject the Null Hypothesis with a high degree of confidence 
 ```
 
 ## 2 sample KS test
@@ -278,7 +279,7 @@ plt.hist(x_1000_bi);
 ![png](index_files/index_23_0.png)
 
 
-### Plot the CDFs for x_100_bimodal and x_1000 and comment on the output 
+### Plot the CDFs for x_1000_bimodal and x_1000 and comment on the output 
 
 
 ```python
@@ -296,7 +297,7 @@ def ks_plot_2sample(data_1, data_2):
     plt.legend(['Data_1', 'Data_2'])
     plt.title('Comparing 2 CDFs for KS-Test')
     
-ks_plot_comp(x_100, x_bimodal_100[:,0])
+ks_plot_2sample(x_1000, x_1000_bi[:,0])
 ```
 
 
@@ -307,17 +308,17 @@ ks_plot_comp(x_100, x_bimodal_100[:,0])
 ```python
 # You comments here 
 
-# x_100 and x_100_bi diverge a lot 
-# We can expect a high value for d statistic 
+# x_1000 and x_1000_bi diverge a lot 
+# We can expect a high value for the d statistic 
 
 ```
 
-### Run the two sample KS test on x_100 and x_100_bi and comment on the results
+### Run the two sample KS test on x_1000 and x_1000_bi and comment on the results
 
 
 ```python
 # Check if the distributions are equal
-stats.ks_2samp(x_1000, x_bimodal_100[:,0])
+stats.ks_2samp(x_1000, x_1000_bi[:,0])
 
 # Ks_2sampResult(statistic=0.575, pvalue=1.2073337530608254e-14)
 ```
@@ -325,7 +326,7 @@ stats.ks_2samp(x_1000, x_bimodal_100[:,0])
 
 
 
-    Ks_2sampResult(statistic=0.575, pvalue=1.2073337530608254e-14)
+    Ks_2sampResult(statistic=0.642, pvalue=2.061584239304449e-121)
 
 
 
