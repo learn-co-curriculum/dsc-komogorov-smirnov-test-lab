@@ -13,7 +13,7 @@ You will be able to:
 
 ## Generate Data
 
-### Let's import necessary libraries and generate some data 
+### Let's import the necessary libraries and generate some data 
 
 
 ```python
@@ -93,9 +93,9 @@ x_1000 = stats.norm.rvs(loc=0, scale=3, size=1000)
 # You comments here 
 ```
 
-### Creat a function to plot the normal CDF and ECDF for a given dataset
+### Create a function to plot the normal CDF and ECDF for a given dataset
 - Create a function ks_plot(data) to generate an empirical CDF from data
-- Create a normal CDF using the same mean = 0 and sd = 3 , having the same number of values as data
+- Create a normal CDF using the same mean = 0 and sd = 3, having the same number of values as data
 
 
 ```python
@@ -119,7 +119,7 @@ def ks_plot(data):
 ![png](index_files/index_8_1.png)
 
 
-This is awesome. The difference between two cdfs in the second plot show that sample did not come from the distribution which we tried to compare it against. 
+This is awesome. The difference between the two CDFs in the second plot shows that the sample did not come from the distribution which we tried to compare it against. 
 
 ### Now you can run all the generated datasets through the function ks_plot and comment on the output.
 
@@ -152,12 +152,12 @@ This is awesome. The difference between two cdfs in the second plot show that sa
 
 ### KS test in SciPy
 
-Lets run the Kolmogorov-Smirnov test, and use some statistics to get a final verdict on normality. It lets us test the hypothesis that the sample is a part of the standard t-distribution. In SciPy, we run this test using the method below:
+Let's run the Kolmogorov-Smirnov test, and use some statistics to get a final verdict on normality. It lets us test the hypothesis that the sample is a part of the standard t-distribution. In SciPy, we run this test using the method below:
 
 ```python
 scipy.stats.kstest(rvs, cdf, args=(), N=20, alternative='two-sided', mode='approx')
 ```
-Details on arguments being passed in can be viewed at this [link to official doc.](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.kstest.html)
+Details on arguments being passed in can be viewed at this [link to the official doc.](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.kstest.html)
 
 
 ### Run the KS test for normality assumption using the datasets created earlier and comment on the output
@@ -257,7 +257,7 @@ def ks_plot_2sample(data_1, data_2):
 
 ```
 
-### Run the two sample KS test on x_1000 and x_1000_bi and comment on the results
+### Run the two-sample KS test on x_1000 and x_1000_bi and comment on the results
 
 
 ```python
