@@ -2,18 +2,18 @@
 # The Kolmogorov-Smirnov Test - Lab
 
 ## Introduction
-In the previous lesson, we saw that the Kolmogorov–Smirnov statistic quantifies a distance between the empirical distribution function of the sample and the cumulative distribution function of the reference distribution, or between the empirical distribution functions of two samples. In this lab, we shall see how to perform this test in python. 
+In the previous lesson, we saw that the Kolmogorov–Smirnov statistic quantifies a distance between the empirical distribution function of the sample and the cumulative distribution function of the reference distribution, or between the empirical distribution functions of two samples. In this lab, we shall see how to perform this test in Python. 
 
 ## Objectives
 
-You will be able to:
-* Perform 1 sample and 2 sample KS tests in Python and Scipy
-* Compare the KS test to visual approaches for checking normality assumptions
-* Plot the CDF and ECDF to visualize parametric and empirical cumulative distribution functions
+In this lab you will:
+- Calculate a one-and two-sample Kolmogorov-Smirnov tests
+- Interpret the results of a one- and two-sample Kolmogorov-Smirnov tests 
+- Compare K-S test to visual approaches for testing for normality assumption
 
-## Generate Data
+### Data
 
-### Let's import the necessary libraries and generate some data 
+Let's import the necessary libraries and generate some data. Run the following cell: 
 
 
 ```python
@@ -31,7 +31,9 @@ x_100 = stats.norm.rvs(loc=0, scale=3, size=100)
 x_1000 = stats.norm.rvs(loc=0, scale=3, size=1000)
 ```
 
-### Plot Histograms and QQ plots of above datasets and comment on the output 
+### Plots 
+
+Plot histograms and Q-Q plots of above datasets and comment on the output 
 
 - How good are these techniques for checking normality assumptions?
 - Compare both these techniques and identify their limitations/benefits etc. 
@@ -39,10 +41,7 @@ x_1000 = stats.norm.rvs(loc=0, scale=3, size=1000)
 
 
 ```python
-# Plot histograms and QQplots for above datasets
-
-# You code here
-
+# Plot histograms and Q-Q plots for above datasets
 labels = ['x_10','x_50','x_100','x_1000']
 for ind, i in enumerate([x_10,x_50,x_100,x_1000]):
     print (labels[ind])
@@ -97,7 +96,7 @@ for ind, i in enumerate([x_10,x_50,x_100,x_1000]):
 
 
 ```python
-# You comments here 
+# Your comments here 
 ```
 
 
@@ -112,13 +111,13 @@ for ind, i in enumerate([x_10,x_50,x_100,x_1000]):
 
 
 ```python
-# The QQ plot is a much better visualization of data as gives a reference to compare against  
+# The Q-Q plot is a much better visualization of data as gives a reference to compare against  
 # Shows a better picture about normality instead of relying on the histograms (or box plots).
-# From QQ plot we can be more assured our data is normal - compared to non normality check in histogram
+# From Q-Q plot we can be more assured our data is normal - compared to non normality check in histogram
 ```
 
 ### Create a function to plot the normal CDF and ECDF for a given dataset
-- Create a function ks_plot(data) to generate an empirical CDF from data
+- Create a function to generate an empirical CDF from data
 - Create a normal CDF using the same mean = 0 and sd = 3, having the same number of values as data
 
 
@@ -132,12 +131,11 @@ def ks_plot(data):
     plt.plot(np.sort(stats.norm.rvs(loc=0, scale=3, size=len(data))), np.linspace(0, 1, len(data), endpoint=False))
 
     plt.legend(['ECDF', 'CDF'])
-    plt.title('Comparing CDFs for KS-Test, Sample size=' + str(len(data)))
+    plt.title('Comparing CDFs for K-S test, Sample size=' + str(len(data)))
     
 
 ks_plot(stats.norm.rvs(loc=0, scale=3, size=100)) 
 ks_plot(stats.norm.rvs(loc=5, scale=4, size=100))
-
 ```
 
 
@@ -150,7 +148,7 @@ ks_plot(stats.norm.rvs(loc=5, scale=4, size=100))
 
 This is awesome. The difference between the two CDFs in the second plot shows that the sample did not come from the distribution which we tried to compare it against. 
 
-### Now you can run all the generated datasets through the function ks_plot and comment on the output.
+Now you can run all the generated datasets through the function `ks_plot()` and comment on the output.
 
 
 ```python
@@ -185,27 +183,26 @@ ks_plot(x_1000)
 # As our sample size goes from 50 to a 1000, we are in a much better position to comment on normality
 ```
 
-### KS test in SciPy
+### K-S test in SciPy
 
-Let's run the Kolmogorov-Smirnov test, and use some statistics to get a final verdict on normality. It lets us test the hypothesis that the sample is a part of the standard t-distribution. In SciPy, we run this test using the method below:
+Let's run the Kolmogorov-Smirnov test, and use some statistics to get a final verdict on normality. We will test the hypothesis that the sample is a part of the standard t-distribution. In SciPy, we run this test using the function below:
 
 ```python
 scipy.stats.kstest(rvs, cdf, args=(), N=20, alternative='two-sided', mode='approx')
 ```
 Details on arguments being passed in can be viewed at this [link to the official doc.](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.kstest.html)
 
-
-### Run the KS test for normality assumption using the datasets created earlier and comment on the output
-- Perform the KS test against a normal distribution with mean = 0 and sd = 3
-- If p < .05 we can reject the null hypothesis and conclude our sample distribution is not identical to a normal distribution.
+Run the K-S test for normality assumption using the datasets created earlier and comment on the output: 
+- Perform the K-S test against a normal distribution with mean = 0 and sd = 3
+- If p < .05 we can reject the null hypothesis and conclude our sample distribution is not identical to a normal distribution 
 
 
 ```python
-# Perform KS test 
+# Perform K-S test 
 
 # Your code here 
 np.random.seed(999)
-for i in [x_10,x_50,x_100,x_1000]:
+for i in [x_10, x_50, x_100, x_1000]:
     print (stats.kstest(i, 'norm', args=(0, 3)))
 
 
@@ -230,13 +227,12 @@ for i in [x_10,x_50,x_100,x_1000]:
 # This is very intuitive as we started off with normal distributions
 ```
 
-
-### Generate a uniform distribution and plot / calculate the ks test against a uniform as well as a normal distribution
+### Generate a uniform distribution and plot / calculate the K-S test against a uniform as well as a normal distribution
 
 
 ```python
-# Try with a uniform distubtion
 x_uni = np.random.rand(1000)
+# Try with a uniform distubtion
 print(stats.kstest(x_uni, lambda x: x))
 print(stats.kstest(x_uni, 'norm', args=(0, 3)))
 
@@ -258,13 +254,15 @@ print(stats.kstest(x_uni, 'norm', args=(0, 3)))
 # so we reject the Null Hypothesis with a high degree of confidence 
 ```
 
-## 2 sample KS test
-A two sample KS test is available in SciPy using following function
+## Two-sample K-S test
+
+A two-sample K-S test is available in SciPy using following function: 
+
 ```python 
 scipy.stats.ks_2samp(data1, data2)[source]
 ```
 
-Let's generate some bi-modal data first for this test 
+Let's generate some bi-modal data first for this test: 
 
 
 ```python
@@ -278,7 +276,7 @@ plt.hist(x_1000_bi);
 ![png](index_files/index_23_0.png)
 
 
-### Plot the CDFs for x_1000_bimodal and x_1000 and comment on the output 
+Plot the CDFs for `x_1000_bimodal` and `x_1000` and comment on the output. 
 
 
 ```python
@@ -312,7 +310,7 @@ ks_plot_2sample(x_1000, x_1000_bi[:,0])
 
 ```
 
-### Run the two-sample KS test on x_1000 and x_1000_bi and comment on the results
+Run the two-sample K-S test on `x_1000` and `x_1000_bi` and comment on the results. 
 
 
 ```python
@@ -333,10 +331,10 @@ stats.ks_2samp(x_1000, x_1000_bi[:,0])
 ```python
 # Your comments here 
 
-# A very small p-value , hence we reject the Null hypothesis
+# A very small p-value, hence we reject the Null hypothesis
 # The two samples belog to different distributions
 ```
 
 ## Summary
 
-In this lesson, we saw how to check for normality (and other distributions) using one sample and two sample ks-tests. You are encouraged to use this test for all the upcoming algorithms and techniques that require a normality assumption. We saw that we can actually make assumptions for different distributions by providing the correct CDF function into Scipy KS test functions. 
+In this lesson, we saw how to check for normality (and other distributions) using one- and two-sample K-S tests. You are encouraged to use this test for all the upcoming algorithms and techniques that require a normality assumption. We saw that we can actually make assumptions for different distributions by providing the correct CDF function into Scipy K-S test functions. 
