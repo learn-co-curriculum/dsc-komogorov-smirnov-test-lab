@@ -7,7 +7,8 @@ In the previous lesson, we saw that the Kolmogorov–Smirnov statistic quantifie
 ## Objectives
 
 In this lab you will:
-- Calculate a one-and two-sample Kolmogorov-Smirnov tests
+
+- Calculate one- and two-sample Kolmogorov-Smirnov tests
 - Interpret the results of a one- and two-sample Kolmogorov-Smirnov tests 
 - Compare K-S test to visual approaches for testing for normality assumption
 
@@ -187,7 +188,7 @@ Run the K-S test for normality assumption using the datasets created earlier and
 # Your comments here 
 ```
 
-### Generate a uniform distribution and plot / calculate the K-S test against a uniform as well as a normal distribution
+Generate a uniform distribution and plot / calculate the K-S test against a uniform as well as a normal distribution: 
 
 
 ```python
@@ -236,7 +237,7 @@ Plot the CDFs for `x_1000_bimodal` and `x_1000` and comment on the output.
 # Plot the CDFs
 def ks_plot_2sample(data_1, data_2):
     '''
-    Data entereted must be the same size.
+    Data entered must be the same size.
     '''
     pass
 
