@@ -8,8 +8,8 @@ In the previous lesson, we saw that the Kolmogorov–Smirnov statistic quantifie
 
 In this lab you will:
 
-- Calculate one- and two-sample Kolmogorov-Smirnov tests
-- Interpret the results of a one- and two-sample Kolmogorov-Smirnov tests 
+- Calculate a one- and two-sample Kolmogorov-Smirnov test
+- Interpret the results of a one- and two-sample Kolmogorov-Smirnov test
 - Compare K-S test to visual approaches for testing for normality assumption
 
 ### Data
